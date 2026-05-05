@@ -1,0 +1,13 @@
+duckdb
+pandas
+numpy
+pyarrow
+scikit-learn
+xgboost
+statsmodels
+joblib
+fastapi
+uvicorn
+matplotlib
+plotly
+tqdm
