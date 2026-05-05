@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicago Crime Forecasting Dashboard</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <h1>Chicago Crime Forecasting Dashboard</h1>
+        <p>Forecasts, district rankings, crime-type risk, high-risk periods, and Chicago map insights.</p>
+      </div>
+
+      <div class="top-actions">
+        <button onclick="openModal('About This Dashboard', aboutText)">About</button>
+        <button onclick="refreshDashboard()">Refresh</button>
+      </div>
+    </header>
+
+    <section class="kpi-row">
+      <button class="kpi-card" onclick="openForecastModal('7')">
+        <span>Next 7-Day Forecast</span>
+        <strong id="forecast7Total">Loading...</strong>
+        <small>Citywide predicted crimes</small>
+      </button>
+
+      <button class="kpi-card" onclick="openForecastModal('30')">
+        <span>Next 30-Day Forecast</span>
+        <strong id="forecast30Total">Loading...</strong>
+        <small>Citywide predicted crimes</small>
+      </button>
+
+      <button class="kpi-card" onclick="openDistrictModal()">
+        <span>Top District Risk</span>
+        <strong id="topDistrict">Loading...</strong>
+        <small id="topDistrictRisk">Loading...</small>
+      </button>
+
+      <button class="kpi-card" onclick="openModal('Model Comparison', renderModelComparisonHTML())">
+        <span>Best Model</span>
+        <strong id="bestModel">Loading...</strong>
+        <small id="bestModelGroup">Loading...</small>
+      </button>
+    </section>
+
+    <main class="dashboard-layout">
+      <section class="map-panel">
+        <div class="section-header">
+          <div>
+            <h2>Chicago Map</h2>
+            <p id="mapSubtitle">Click a district marker to view prediction details.</p>
+          </div>
+
+          <div class="filters">
+            <select id="crimeTypeSelect"></select>
+            <select id="districtSelect"></select>
+            <button onclick="applyFilters()">Apply</button>
+            <button id="toggleMapBtn" onclick="toggleMap()">Hide Map</button>
+          </div>
+        </div>
+
+        <div id="map"></div>
+
+        <div id="mapCollapsedMessage" class="map-collapsed-message hidden">
+          <p>Map is hidden. Use “Show Map” to display the Chicago map again.</p>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="mini-panel">
+          <div class="section-header compact">
+            <h3>District Ranking</h3>
+            <button onclick="openDistrictModal()">View All</button>
+          </div>
+          <div id="districtCards" class="scroll-list"></div>
+        </section>
+
+        <section class="mini-panel">
+          <div class="section-header compact">
+            <h3>Crime Type Risk</h3>
+            <button onclick="openCrimeTypeModal()">View All</button>
+          </div>
+          <div id="crimeTypeCards" class="scroll-list"></div>
+        </section>
+      </aside>
+    </main>
+
+    <section class="bottom-grid">
+      <section class="table-panel">
+        <div class="section-header compact">
+          <h3>High-Risk Time Periods</h3>
+          <button onclick="openHighRiskModal()">Open</button>
+        </div>
+
+        <div class="table-wrap small-table">
+          <table>
+            <thead>
+              <tr>
+                <th>District</th>
+                <th>Crime</th>
+                <th>Day</th>
+                <th>Hour</th>
+                <th>Risk %</th>
+              </tr>
+            </thead>
+            <tbody id="highRiskTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="table-panel">
+        <div class="section-header compact">
+          <h3>7-Day Forecast</h3>
+          <button onclick="openForecastModal('7')">Open</button>
+        </div>
+        <div id="forecast7List" class="forecast-list"></div>
+      </section>
+
+      <section class="table-panel">
+        <div class="section-header compact">
+          <h3>Crime Categories</h3>
+          <button onclick="openCrimeTypeModal()">Open</button>
+        </div>
+        <div id="crimeSummaryList" class="forecast-list"></div>
+      </section>
+    </section>
+  </div>
+
+  <div id="modalBackdrop" class="modal-backdrop hidden" onclick="closeModal(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Details</h2>
+        <button onclick="forceCloseModal()">×</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

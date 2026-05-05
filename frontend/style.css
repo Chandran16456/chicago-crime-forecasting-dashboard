@@ -1,0 +1,510 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f4f4;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.app {
+  width: min(1500px, 98%);
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* ------------------------------
+   Top bar
+------------------------------ */
+
+.topbar {
+  min-height: 72px;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.topbar p {
+  margin: 3px 0 0;
+  color: #666;
+  font-size: 0.86rem;
+}
+
+.top-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ------------------------------
+   Buttons and selects
+------------------------------ */
+
+button,
+select {
+  border: 1px solid #111;
+  background: #fff;
+  color: #111;
+  border-radius: 8px;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-size: 0.86rem;
+}
+
+button:hover {
+  background: #111;
+  color: #fff;
+}
+
+select {
+  max-width: 210px;
+}
+
+/* ------------------------------
+   KPI cards
+------------------------------ */
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.kpi-card {
+  text-align: left;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 82px;
+}
+
+.kpi-card span {
+  display: block;
+  color: #555;
+  font-size: 0.82rem;
+}
+
+.kpi-card strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 1.45rem;
+}
+
+.kpi-card small {
+  display: block;
+  margin-top: 3px;
+  color: #777;
+  line-height: 1.25;
+}
+
+/* ------------------------------
+   Main dashboard layout
+------------------------------ */
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1.45fr 0.85fr;
+  gap: 10px;
+  height: 420px;
+  min-height: 420px;
+}
+
+.map-panel,
+.side-panel,
+.table-panel,
+.mini-panel {
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+}
+
+.map-panel {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.side-panel {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  height: 420px;
+}
+
+.mini-panel {
+  padding: 12px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ------------------------------
+   Section headers
+------------------------------ */
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.section-header h2,
+.section-header h3 {
+  margin: 0;
+}
+
+.section-header h2 {
+  font-size: 1.08rem;
+}
+
+.section-header h3 {
+  font-size: 0.98rem;
+}
+
+.section-header p {
+  margin: 3px 0 0;
+  color: #666;
+  font-size: 0.82rem;
+}
+
+.section-header.compact {
+  align-items: center;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* ------------------------------
+   Map
+------------------------------ */
+
+#map {
+  height: 320px;
+  min-height: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #dcdcdc;
+}
+
+.map-panel.collapsed #map {
+  display: none;
+}
+
+.map-panel.collapsed {
+  height: auto;
+}
+
+.map-collapsed-message {
+  border: 1px dashed #999;
+  border-radius: 10px;
+  min-height: 130px;
+  display: grid;
+  place-items: center;
+  color: #555;
+  background: #fafafa;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.leaflet-popup-content button {
+  margin-top: 6px;
+}
+
+/* ------------------------------
+   Cards and lists
+------------------------------ */
+
+.scroll-list {
+  overflow-y: auto;
+  padding-right: 4px;
+  flex: 1;
+  min-height: 0;
+}
+
+.rank-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 9px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.rank-card:hover {
+  border-color: #111;
+  background: #fff;
+}
+
+.rank-card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.rank-card strong {
+  font-size: 0.96rem;
+}
+
+.rank-card small {
+  color: #666;
+  font-size: 0.82rem;
+}
+
+/* ------------------------------
+   Badges
+------------------------------ */
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 8px;
+  font-size: 0.73rem;
+  border: 1px solid #111;
+  background: #fff;
+  color: #111;
+  white-space: nowrap;
+}
+
+.low {
+  border-color: #777;
+  color: #333;
+  background: #fff;
+}
+
+.moderate {
+  border-color: #333;
+  background: #f1f1f1;
+  color: #111;
+}
+
+.high {
+  background: #111;
+  color: #fff;
+}
+
+.very-high {
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* ------------------------------
+   Bottom grid
+------------------------------ */
+
+.bottom-grid {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr 0.9fr;
+  gap: 10px;
+  min-height: 220px;
+}
+
+.table-panel {
+  padding: 12px;
+  min-height: 220px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-wrap {
+  overflow: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  flex: 1;
+}
+
+.small-table {
+  max-height: 158px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+th {
+  text-align: left;
+  background: #f0f0f0;
+  color: #111;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+tr:hover {
+  background: #f8f8f8;
+}
+
+.forecast-list {
+  overflow-y: auto;
+  max-height: 160px;
+}
+
+.forecast-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 6px;
+  background: #fafafa;
+}
+
+.forecast-row span {
+  color: #333;
+}
+
+.forecast-row strong {
+  color: #111;
+}
+
+/* ------------------------------
+   Modal
+------------------------------ */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  width: min(980px, 92vw);
+  max-height: 86vh;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 14px 16px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.modal-header button {
+  font-size: 1.35rem;
+  padding: 4px 10px;
+}
+
+.modal-body {
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.modal-body p {
+  color: #444;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.detail-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+  background: #fafafa;
+}
+
+.detail-card h4 {
+  margin: 0 0 6px;
+}
+
+.detail-card p {
+  margin: 4px 0;
+  color: #555;
+}
+
+/* ------------------------------
+   Mobile/tablet
+------------------------------ */
+
+@media (max-width: 1050px) {
+  .topbar,
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .top-actions,
+  .filters {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .kpi-row,
+  .dashboard-layout,
+  .bottom-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .side-panel {
+    height: auto;
+    grid-template-rows: auto auto;
+  }
+
+  #map {
+    height: 310px;
+    min-height: 310px;
+  }
+
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+}
