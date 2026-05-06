@@ -1,0 +1,16 @@
+primary_type,predicted_30_day_crime_count,expected_30_day_count,display_risk_percent,risk_direction,risk_level,risk_confidence
+PROSTITUTION,30,10.85,176.5,Above Recent Baseline,Very High,Low Volume
+NARCOTICS,362,319.64,13.25,Above Recent Baseline,High,Stable
+MOTOR VEHICLE THEFT,979,901.81,8.56,Above Recent Baseline,Moderate,Stable
+CRIMINAL TRESPASS,295,282.82,4.31,Above Recent Baseline,Moderate,Stable
+BURGLARY,558,558.82,-0.15,Below Recent Baseline,Low,Stable
+THEFT,3288,3414.66,-3.71,Below Recent Baseline,Low,Stable
+OTHER OFFENSE,1056,1133.84,-6.87,Below Recent Baseline,Low,Stable
+ROBBERY,599,654.08,-8.42,Below Recent Baseline,Low,Stable
+BATTERY,2945,3335.59,-11.71,Below Recent Baseline,Low,Stable
+ASSAULT,1380,1671.04,-17.42,Below Recent Baseline,Low,Stable
+CRIMINAL DAMAGE,1574,2060.96,-23.63,Below Recent Baseline,Low,Stable
+WEAPONS VIOLATION,541,726.33,-25.52,Below Recent Baseline,Low,Stable
+DECEPTIVE PRACTICE,815,1182.74,-31.09,Below Recent Baseline,Low,Stable
+OFFENSE INVOLVING CHILDREN,57,151.97,-62.49,Below Recent Baseline,Low,Low Volume
+PUBLIC PEACE VIOLATION,0,48.58,-100.0,Below Recent Baseline,Low,Low Volume

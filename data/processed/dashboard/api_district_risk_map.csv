@@ -1,0 +1,23 @@
+district,predicted_30_day_crime_count,expected_30_day_count,display_risk_percent,risk_direction,risk_level,latitude,longitude
+1,755,785.1,-3.83,Below Recent Baseline,Low,41.877974476,-87.627710113
+12,858,901.89,-4.87,Below Recent Baseline,Low,41.882189834,-87.669819749
+24,532,566.47,-6.09,Below Recent Baseline,Low,42.005538314,-87.674047928
+8,942,1036.44,-9.11,Below Recent Baseline,Low,41.779076327,-87.708657839
+9,672,746.63,-10.0,Below Recent Baseline,Low,41.811435102,-87.665377194
+22,501,558.82,-10.35,Below Recent Baseline,Low,41.706925829,-87.655531644
+10,656,740.55,-11.42,Below Recent Baseline,Low,41.853727204,-87.713709063
+4,892,1009.56,-11.64,Below Recent Baseline,Low,41.739938233,-87.562214103
+2,694,790.11,-12.16,Below Recent Baseline,Low,41.80929204,-87.616020877
+3,748,856.6,-12.68,Below Recent Baseline,Low,41.770676135,-87.599632136
+18,731,846.9,-13.69,Below Recent Baseline,Low,41.900489748,-87.633988472
+14,481,558.9,-13.94,Below Recent Baseline,Low,41.914890617,-87.693503443
+25,749,873.78,-14.28,Below Recent Baseline,Low,41.918883434,-87.751478832
+5,649,768.58,-15.56,Below Recent Baseline,Low,41.6871264905,-87.622731926
+17,386,465.04,-17.0,Below Recent Baseline,Low,41.9599498995,-87.718447888
+20,279,345.04,-19.14,Below Recent Baseline,Low,41.977654531,-87.666903496
+6,872,1092.41,-20.18,Below Recent Baseline,Low,41.748103019,-87.629610031
+16,487,610.11,-20.18,Below Recent Baseline,Low,41.9652372275,-87.781961204
+15,509,641.01,-20.59,Below Recent Baseline,Low,41.884985305,-87.757305698
+19,627,789.78,-20.61,Below Recent Baseline,Low,41.946367827,-87.655984213
+11,821,1042.93,-21.28,Below Recent Baseline,Low,41.880396059,-87.720764494
+7,638,851.1,-25.04,Below Recent Baseline,Low,41.775191608,-87.654040477

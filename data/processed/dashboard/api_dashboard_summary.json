@@ -1,0 +1,26 @@
+{
+    "project_name": "Chicago Crime Forecasting & Risk Analysis Dashboard",
+    "raw_data_start_date": "2001-01-01",
+    "raw_data_end_date": "2022-02-14",
+    "model_training_start_date": "2001-01-01 00:00:00",
+    "model_training_end_date": "2022-02-12 00:00:00",
+    "total_clean_records": 7489701,
+    "total_training_days": 7713,
+    "best_citywide_model": "Rolling Mean 7 Days",
+    "best_citywide_model_group": "Baseline",
+    "forecast_7_day_total": 3719,
+    "forecast_30_day_total": 15954,
+    "top_district_by_risk": {
+        "district": 1,
+        "predicted_30_day_crime_count": 755,
+        "risk_percent": -3.83,
+        "risk_level": "Low"
+    },
+    "top_crime_type_by_risk": {
+        "primary_type": "PROSTITUTION",
+        "predicted_30_day_crime_count": 30,
+        "risk_percent": 176.5,
+        "risk_level": "Very High",
+        "risk_confidence": "Low Volume"
+    }
+}

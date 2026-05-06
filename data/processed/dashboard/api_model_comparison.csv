@@ -1,0 +1,4 @@
+model,mae,rmse,mape,r2,model_group,order,aic,seasonal_order
+Rolling Mean 7 Days,42.61,55.78,8.56,0.2092,Baseline,,,
+"SARIMA(1, 1, 1)x(1, 1, 1, 7)",74.61,92.81,15.9,-1.189,SARIMA,"(1, 1, 1)",88932.59,"(1, 1, 1, 7)"
+"ARIMA(5, 1, 1)",78.45,97.27,16.74,-1.4042,ARIMA,"(5, 1, 1)",90031.83,

@@ -2,13 +2,16 @@ venv/
 .venv/
 __pycache__/
 .ipynb_checkpoints/
+.env
 
 data/raw/
-data/processed/
 db/
 models/
 
-*.csv
+data/processed/*
+!data/processed/dashboard/
+!data/processed/dashboard/**
+
 *.txt
 *.parquet
 *.duckdb
@@ -16,4 +19,3 @@ models/
 *.pkl
 
 node_modules/
-.env
